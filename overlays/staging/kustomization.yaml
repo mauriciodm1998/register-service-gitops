@@ -10,6 +10,16 @@ configMapGenerator:
   name: configmap
   behavior: merge
 
+patches: 
+- patch: |-
+    - op: add
+      path: /spec/template/spec/containers/0/envFrom
+      value:
+        - secretRef:
+            name: register-service-secret
+  target:
+    kind: Deployment
+
 images:
-- name: main
-  newName: todo
+- name: image
+  newName: docker.io/mauricio1998/register-service

@@ -1,7 +1,9 @@
 server:
-  port: 3000
+  port: 8080
 token:
   key: "uk5RAK5cumPZZ3jIuKGMn019wXYz4kad"
 sqs:
-  clock_in_queue: queue
-  report_queue: queue
+  clock_in_queue: https://sqs.us-east-1.amazonaws.com/851725660206/clock_in_queue
+  report_queue: https://sqs.us-east-1.amazonaws.com/851725660206/report_queue
+mailer:
+  from: mauriciodmpires1@gmail.com
